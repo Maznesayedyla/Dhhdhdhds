@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Refresh Page</title>
+    <title>تسجيل الدخول</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,39 +14,63 @@
             height: 100vh;
             margin: 0;
         }
-        .container {
-            text-align: center;
+        .login-container {
             background-color: #fff;
-            padding: 20px 40px;
+            padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
         }
-        h1 {
-            color: #333;
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
         }
-        .button-refresh, .button-link {
-            display: inline-block;
-            margin: 10px 5px;
-            padding: 10px 20px;
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .login-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
             border: none;
             border-radius: 5px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
+            color: #fff;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            font-size: 16px;
         }
-        .button-refresh:hover, .button-link:hover {
-            background-color: #0056b3;
+        .login-container input[type="submit"]:hover {
+            background-color: #218838;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Refresh the Page</h1>
-        <button class="button-refresh" onclick="location.reload();">Refresh</button>
-        <a href="http://uptadt.kesug.com/" target="_blank" class="button-link">Visit Uptadt</a>
+    <div class="login-container">
+        <h2>تسجيل الدخول</h2>
+        <form onsubmit="return validateForm()" action="https://maznesayedyla.github.io/Shshdushhhtml/">
+            <input type="text" id="id" placeholder=". (اكتب الايدي)" maxlength="9" required pattern="\d{9}">
+            <input type="password" id="password" placeholder="أدخل كلمة المرور" required>
+            <input type="submit" value="تسجيل الدخول">
+        </form>
     </div>
+
+    <script>
+        function validateForm() {
+            var id = document.getElementById("id").value;
+            var password = document.getElementById("password").value;
+
+            if (id.length === 9 && password === "9298275242") {
+                return true;
+            } else {
+                alert("كلمه المرور خطاء او الايدي خطاء");
+                return false;
+            }
+        }
+    </script>
 </body>
 </html>
